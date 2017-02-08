@@ -52,7 +52,7 @@ public class DatasetGen {
 			transTotal=(float) (rand.nextInt(990)+10+rand.nextInt(99)/100.0);
 			transdesc=RandomName.generateName(rand.nextInt((50-20)+1)+20); 
 			transItems=rand.nextInt(10)+1;
-			custID=(j%50000==0)?50000:j%50000;
+			custID=rand.nextInt(50000)+1;
 			csvwrite.writeNext(new String[]{String.valueOf(j),
 					String.valueOf(custID),
 					String.valueOf(transTotal),
@@ -62,9 +62,4 @@ public class DatasetGen {
 		}
 		csvwrite.close();
 	}
-	
-	
-	
-	
-
 }
